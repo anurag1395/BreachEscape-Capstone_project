@@ -1,0 +1,167 @@
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            min-height: 380px;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        input[type=text],
+        select,
+        textarea {
+            width: 300px;
+            padding: 12px;
+            margin: inherit;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            position: relative;
+            display: block;
+            margin-left: 450px;
+        }
+        
+        input[type=password],
+        select,
+        textarea {
+            width: 300px;
+            padding: 12px;
+            margin: inherit;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            position: relative;
+            display: block;
+            margin-left: 450px;
+        }
+        /* input[type=submit] {
+                    background-color: #4CAF50;
+                    color: rgb(0, 0, 0);
+                    padding: 12px 20px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin-left: 50%;
+                }
+                
+                input[type=submit]:hover {
+                    background-color: #45a049;
+                    align-content: center;
+                } */
+        
+        .reset_pass {
+            border-radius: 350px;
+            background-color: rgba(255, 255, 255, 0.445);
+            padding: 120px;
+        }
+        
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+        /* .pass_forget a {
+                    -moz-border-radius: 42px;
+                    -webkit-border-radius: 42px;
+                    border-radius: 42px;
+                    margin-left: 430px;
+                    display: inline-block;
+                    cursor: pointer;
+                    color: #02245a;
+                    font-family: Arial;
+                    text-align: center;
+                    font-weight: bold;
+                    width: 200px;
+                    padding: 10px 76px;
+                    font-size: 15px;
+                } */
+        
+        .pass_forget a:hover {
+            color: #1e62d0;
+        }
+        
+        .reset_pass label {
+            margin-left: 367pt;
+            font-weight: 500;
+            font-size: x-large;
+        }
+        
+        .myButton button {
+            -moz-box-shadow: inset 0px 2px 0px -50px #97c4fe;
+            -webkit-box-shadow: inset 0px 2px 0px -50px #97c4fe;
+            box-shadow: inset 0px 2px 0px -50px #97c4fe;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0));
+            background: -moz-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background: -webkit-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background: -o-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background: -ms-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+            background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0', GradientType=0);
+            background-color: #3d94f6;
+            -moz-border-radius: 42px;
+            -webkit-border-radius: 42px;
+            border-radius: 42px;
+            margin-left: 403px;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            width: 400px;
+            position: relative;
+            padding: 10px 76px;
+            text-decoration: none;
+            text-shadow: 0px 0px 0px #1570cd;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <ul>
+                <li class="home">
+                    <a href="/home">Home</a>
+                </li>
+                <li class="test">
+                    <a href="/test">Risk Calculator</a>
+                </li>
+                <li class="dashboards">
+                    <a href="/dashboard">Interactive Dashboards</a>
+                </li>
+                <li class="contact">
+                    <a href="/contactus">Contact Us</a>
+                </li>
+                <li class="contact">
+                    <a href="/navlogin">{{is_logged_in}}</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="logo">
+        <img src="/static/img/logo.jpg">
+    </div>
+    <h2>We cannot find you in our database.</h2>
+    <h4>Please enter your Username below and try again</h4>
+    <div class="reset_pass">
+        <form action="/forgot_password " method="POST" id="user-form">
+            <label for="uname">Email ID or Userame</label>
+            <input type="text" id="uname" name="uname" placeholder="Username">
+            <div class="myButton">
+                <button id="login">Email me my Password</button>
+            </div>
+        </form>
+    </div>
+</body>

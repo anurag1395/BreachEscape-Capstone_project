@@ -1,0 +1,41 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/result.css') }}">
+</head>
+
+<body background="/static/img/BGimage.jpg">
+    <header>
+        <div class="nav">
+            <ul>
+                <li class="home">
+                    <a href="/home">Home</a>
+                </li>
+                <li class="test">
+                    <a href="/test">Risk Calculator</a>
+                </li>
+                <li class="dashboards">
+                    <a href="/dashboard">Interactive Dashboards</a>
+                </li>
+                <li class="contact">
+                    <a href="/contactus">Contact Us</a>
+                </li>
+                <li class="contact">
+                    <a href="/navlogin">{{is_logged_in}}</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+    <div class="result">
+        <h1> {{ prediction }}</h1>
+
+        <span class="risk-score">{{risk_score}}</span><span class="risk-meter"><meter min="0.1" low="0.3" optimum="0.5"
+            high="0.7" max="1" value={{risk_score}} ></meter></span>
+        <h3> {{ desc1 }}</h3>
+        <h3> {{ desc2 }}</h3>
+        <h3> {{ desc3 }}</h3>
+        <!-- <h3> {{ desc4 }}</h3> -->
+        <!-- <h3> {{ desc5 }}</h3> -->
+    </div>
+
+</body>

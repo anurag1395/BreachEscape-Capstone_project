@@ -1,0 +1,330 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/test1.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <ul>
+                <li class="home">
+                    <a href="/home">Home</a>
+                </li>
+                <li class="test">
+                    <a href="/test">Risk Calculator</a>
+                </li>
+                <li class="dashboards">
+                    <a href="/dashboard">Interactive Dashboards</a>
+                </li>
+                <li class="contact">
+                    <a href="/contactus">Contact Us</a>
+                </li>
+                <li class="contact">
+                    <a href="/navlogin">{{is_logged_in}}</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="logo">
+        <img src="/static/img/logo.jpg">
+    </div>
+
+    <div class="text-box">
+        <h1 id="title" class="title">Risk Assessment Calculator</h1>
+    </div>
+
+    <div class="container">
+        <form action="/result" id="survey-form" method="POST">
+            <div class="labels">
+                <label id="" for="Comp_sz">Company size</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="Comp_sz">
+                    <option value="0">Unknown</option>
+                    <option value="1">10,000+</option>
+                    <option value="2">500 - 9,999</option>
+                    <option value="3">50 - 499</option>
+                    <option value="4">Less than 10</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="Business_sec" for="business_sector">Business Sector</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="Business_sec">
+                    <option value="0">Other</option>
+                    <option value="1">Banking and Financial services</option>
+                    <option value="2">Education</option>
+                    <option value="3">Government</option>
+                    <option value="4">Health</option>
+                    <option value="5">IT</option>
+                    <option value="6">Manufacturing and Retail</option>
+                    <option value="7">Real estate and Utilities</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="prio_info_sec" for="prio_info_sec">Priority of information security</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="prio_info_sec">
+                    <option value="0">Unknown</option>
+                    <option value="1">Very High</option>
+                    <option value="2">High</option>
+                    <option value="3">Neither High nor Low</option>
+                    <option value="4">Low</option>
+                    <option value="5">Not a priority</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="staff_sec_pol" for="staff_sec_pol">Staff understanding of security policy</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="staff_sec_pol">
+                    <option value="0">Unknown</option>
+                    <option value="1">Well Understood</option>
+                    <option value="2">Quiet Well Understood</option>
+                    <option value="3">Poorly Understood</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="IT_exp" for="IT_exp">IT expenditure on security</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="IT_exp">
+                    <option value="0">None</option>
+                    <option value="1">More than 50</option>
+                    <option value="2">26 - 50</option>
+                    <option value="3">11 - 25</option>
+                    <option value="4">6 - 10</option>
+                    <option value="5">2 - 5</option>
+                    <option value="6">1 or less</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="virus_att" for="virus_att">No. of total virus attacks occured</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="virus_att">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times a day</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">A few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <br>
+            <div class="labels">
+                <label id="" for="NOT_data_corruption_occ">Number of times data corruption occured</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="NOT_data_corruption_occ">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">Few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="" for="NOT_staff_sent_inappropriate_emails">Number of times staff sent inappropriate
+                    emails</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="NOT_staff_sent_inappropriate_emails">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">Few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="" for="NOT_staff_accessed_data_Others_UserId">Number of times staff accessed data with others
+                    user ID</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="NOT_staff_accessed_data_Others_UserId">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">Few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="misused_data" for="misused_data">No. of times employees misused confidential data</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="misused_data">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times a day</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">A few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="lost_data" for="lost_data">No. of times confidential data was accidentally lost by
+                    employees</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="lost_data">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times a day</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">A few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="" for="NOT_staff_stole_comp_equip">Number of times staff stole computer equipment</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="NOT_staff_stole_comp_equip">
+                    <option value="0">Unknown</option>
+                    <option value="1">Daily</option>
+                    <option value="2">Weekly</option>
+                    <option value="3">Monthly</option>
+                    <option value="4">Few times</option>
+                    <option value="5">Only once</option>
+                    <option value="6">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="" for="NOT_staff_sabotaged_data">Number of times staff deliberately sabotaged data</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="NOT_staff_sabotaged_data">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several Times a day</option>
+                    <option value="4">Few times</option>
+                    <option value="5">Only once</option>
+                    <option value="6">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="outsider_break_in" for="outsider_break_in">Unauthorised outsider tried to break in</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="outsider_break_in">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times a day</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">A few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="outsider_penetrated" for="outsider_penetrated">No. of times Unauthorised outsider succeeded
+                    in penetrating the system</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="outsider_penetrated">
+                    <option value="0">Unknown</option>
+                    <option value="1">Weekly</option>
+                    <option value="2">Monthly</option>
+                    <option value="3">>A few times</option>
+                    <option value="4">Only once</option>
+                    <option value="5">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="not_dos" for="not_dos">No. of times Unauthorised outsider launched DOS</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="not_dos">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times a day</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">A few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="intercepted_comm" for="intercepted_comm">Number of times Unauthorised Outsider intercepted
+                    communication</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="intercepted_comm">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times a day</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">A few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="phishing" for="phishing">Number of times Phishing attacks occured</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="phishing">
+                    <option value="0">Unknown</option>
+                    <option value="1">Several times a day</option>
+                    <option value="2">Daily</option>
+                    <option value="3">Weekly</option>
+                    <option value="4">Monthly</option>
+                    <option value="5">A few times</option>
+                    <option value="6">Only once</option>
+                    <option value="7">None</option>
+                </select>
+            </div>
+            <div class="labels">
+                <label id="stolen_data" for="stolen_data">No. of times confidential data was stolen by employees</label>
+            </div>
+            <div class="input-tab">
+                <select id="dropdown" name="stolen_data">
+                    <option value="0">Unknown</option>
+                    <option value="1">Hundreds of times a day</option>
+                    <option value="2">Weekly</option>
+                    <option value="3">Monthly</option>
+                    <option value="4">A few times</option>
+                    <option value="5">Only once</option>
+                    <option value="6">None</option>
+                </select>
+            </div>
+
+
+
+            <div class="btn">
+                <button id="submit" type="submit" value="Submit">Submit</button>
+            </div>
+            <br>
+        </form>
+        <footer>
+            <p>BreachEscape</p>
+        </footer>
+    </div>
+</body>
+
+</html>

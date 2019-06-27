@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+</head>
+
+<body background="/static/img/BGimage.jpg">
+    <div class="nav">
+        <ul>
+            <li class="home">
+                <a href="/home">Home</a>
+            </li>
+            <li class="test">
+                <a href="/test">Risk Calculator</a>
+            </li>
+            <li class="dashboards">
+                <a href="https://public.tableau.com/profile/anurag6334#!/vizhome/breachEscape_test/Sheet1?publish=yes">Interactive
+                    Dashboard</a>
+            </li>
+            <li class="contact">
+                <a href="/contactus">Contact Us</a>
+            </li>
+            <li class="contact">
+                <a href="/navlogin">{{is_logged_in}}</a>
+            </li>
+        </ul>s
+    </div>
+    <h4>You Have successfully Logged out!</h4>
+</body>

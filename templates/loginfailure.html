@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+</head>
+
+<body background="/static/img/BGimage.jpg">
+    <div class="nav">
+        <ul>
+            <li class="home">
+                <a href="/home">Home</a>
+            </li>
+            <li class="test">
+                <a href="/test">Risk Calculator</a>
+            </li>
+            <li class="dashboards">
+                <a href="/dashboard">Interactive Dashboards</a>
+            </li>
+            <li class="contact">
+                <a href="/contactus">Contact Us</a>
+            </li>
+            <li class="contact">
+                <a href="/navlogin">{{is_logged_in}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="logo">
+        <img src="/static/img/logo.jpg">
+    </div>
+    <h4>Incorrect Username and Password. Please Try again here <a href="/test">Login</a></h4>
+</body>

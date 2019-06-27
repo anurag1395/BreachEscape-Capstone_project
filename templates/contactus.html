@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            min-height: 380px;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0 12px 0;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        
+        input[type=submit] {
+            background-color: #02245a;
+            color: rgb(248, 248, 248);
+            padding: 12px 20px;
+            border: none;
+            font-weight: 900;
+            font-size: unset;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 550px;
+        }
+        
+        input[type=submit]:hover {
+            color: #1e62d0;
+            align-content: center;
+        }
+        
+        .container {
+            border-radius: 350px;
+            background-color: rgba(255, 255, 255, 0.445);
+            padding: 120px;
+        }
+        
+        .container label {
+            font-weight: 100;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <ul>
+                <li class="home">
+                    <a href="/home">Home</a>
+                </li>
+                <li class="test">
+                    <a href="/test">Risk Calculator</a>
+                </li>
+                <li class="dashboards">
+                    <a href="/dashboard">Interactive Dashboards</a>
+                </li>
+                <li class="contact">
+                    <a href="/contactus">Contact Us</a>
+                </li>
+                <li class="contact">
+                    <a href="/navlogin">{{is_logged_in}}</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="logo">
+        <img src="/static/img/logo.jpg">
+    </div>
+    <h2>Contact Form</h2>
+
+    <div class="container">
+        <form method="POST" action="/thankyou" id="contact-us-form">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                  <option value="australia">Australia</option>
+                  <option value="canada">Canada</option>
+                  <option value="usa">USA</option>
+            </select>
+
+            <label for="email">Email address<label>
+            <input type="text" id="email" name="email" placeholder="Your Email Id" required>
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write your Request" style="height:200px" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

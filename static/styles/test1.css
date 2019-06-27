@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+.title {
+    font-family: fantasy;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* body,
+html {
+    background-image: url("/static/img/BGimage.jpg");
+    font-family: "abel", sans-serif;
+    text-align: center;
+    min-width: 260px;
+    color: white;
+    background-color: transparent;
+} */
+
+
+/* body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+} */
+
+.text-box {
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 30px;
+    margin: 2em auto;
+    padding: 25px;
+    width: 85%;
+}
+
+h1 {
+    font-family: fantasy;
+    margin: 2;
+    color: rgb(3, 4, 95);
+    text-align: center;
+    letter-spacing: 5px;
+    word-spacing: 0.1em;
+    line-height: 0.2em;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    color: rgb(3, 4, 95);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.2em;
+}
+
+hr {
+    width: 60%;
+    margin: 8px auto;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 20px;
+    margin: auto;
+    width: 87.23%;
+    padding: 1em;
+}
+
+#survey-form {
+    margin: 0 auto;
+    width: 70%;
+    padding: 5px;
+}
+
+.labels {
+    display: inline-block;
+    text-align: left;
+    color: rgb(3, 4, 95);
+    width: 40%;
+    vertical-align: top;
+    margin-top: 18px;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.input-tab {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    margin-left: 10px;
+}
+
+.input-field {
+    display: inline-block;
+    width: 110%;
+    padding: 5px;
+    margin: 18px 0 10px;
+    border: 1px solid yellow;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+    font-weight: 300;
+}
+
+input {
+    margin: 7px;
+}
+
+#dropdown {
+    width: 110%;
+    padding: 5px;
+    margin: 20px 0 10px 10px;
+    border: 1px solid yellow;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    margin: 25px;
+}
+
+button {
+    background-color: rgba(6, 5, 68, 0.938);
+    border-radius: 4px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: inherit;
+    padding: 10px 15px;
+    border: 1px solid;
+    margin-left: -100px;
+}
+
+button:hover {
+    background-color: rgba(63, 87, 151, 0.76);
+}
+
+
+/* footer {
+    text-align: center;
+    font-size: 17px;
+    margin: 20px;
+} */
+
+footer a {
+    color: #f39c12;
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.try1 {
+    font-size: 70px;
+}
+
+footer p {
+    margin: 1.5em;
+    font-size: 0.95em;
+    margin-left: auto;
+}
+
+
+/* @media only screen and (max-width: 768px) {
+  body{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.cartoonswallpapers.net/wallpapers/simpsons-hd-wallpaper-ios-7.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  .labels {
+    width: 100%;
+    text-align: left;
+  }
+  .input-tab {
+    width: 100%;
+    float: left;
+    margin-left: -10px;
+  }
+  .input-field {
+    width: 100%;
+  }
+  select {
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+    margin: auto;
+  }
+} */
+
+
+/* 
+.nav ul {
+    list-style: none;
+    background-color: #444;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #888;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+}
+
+.nav a:hover {
+    background-color: #005f5f;
+}
+
+.nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+@media screen and (min-width: 600px) {
+    .nav li {
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+        display: inline-block;
+        margin-right: -4px;
+        width: 280px;
+    }
+}
+
+black-text {
+    color: #000 !important;
+} */

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+body {
+    background-image: url("/static/img/BGimage.jpg");
+    margin: auto;
+    padding: 0;
+    /*background-image: url("BGimage.jpg");*/
+    min-height: 380px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav ul {
+    list-style: none;
+    background-color: rgba(5, 33, 124, 0.349);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    line-height: 40px;
+    height: 40px;
+    width: 280px;
+    border-bottom: 1px solid #888;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgb(2, 0, 0);
+    display: block;
+    transition: .3s background-color;
+}
+
+.nav a:hover {
+    background-color: #1f77c9e7;
+}
+
+.nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+.Project {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.AboutUs {
+    background: rgba(255, 255, 255, 0.445);
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 100px;
+    margin-left: 80px;
+    margin-right: 80px;
+    color: rgb(255, 255, 255);
+}
+
+.AboutUs p {
+    align-content: center;
+    color: rgb(3, 4, 95);
+}
+
+h1 {
+    font-size: 2.3em;
+    text-align: center;
+    color: rgb(3, 4, 95);
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(3, 4, 95);
+}
+
+h4 {
+    text-align: center;
+    color: rgb(3, 4, 95);
+}
+
+h3 {
+    text-align: center;
+    color: rgb(3, 4, 95);
+}
+
+meter {
+    width: 900px;
+    height: 40px;
+    margin-left: 220px;
+}
+
+.risk-score {
+    position: relative;
+    left: 50%;
+    z-index: 1;
+    font-size: 35px;
+}
+
+.risk-meter {
+    position: absolute;
+}
+
+@media screen and (min-width: 600px) {
+    .nav li {
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+        display: inline-block;
+        width: 280px;
+    }
+}
+
+black-text {
+    color: #000 !important;
+}
